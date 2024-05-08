@@ -1,0 +1,225 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.heading-1{
+  display: flex;
+  justify-content: center;
+}
+.navbar{
+   width:95%;
+   background-color: rgb(0, 0, 0);
+   height: 50px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+   display: flex;
+   justify-content: center;
+   gap: 100px;
+   align-items: center;
+}
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+.a{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.homepage{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 95%;
+  height: 650px;
+   background-color: rgb(233, 121, 121);
+   border-bottom-left-radius: 15px;
+   border-bottom-right-radius: 15px;
+   margin-bottom: 80px
+}
+.h1-1{
+  font-size: 65px;
+  color: white;
+}
+.image-1{
+  width: 35%;
+
+}
+.img-2{
+  width: 60%;
+  ;
+  color: white;
+}
+.btn{
+  width: 35%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 17px;
+    border: none;
+    background-color: rgb(165, 62, 79);
+    color: white;
+}
+.btn1{
+  display: flex;
+  width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 17px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgb(14, 6, 8);
+    color: white;
+}
+.card{
+  width: 100%;
+  height: 400px;
+  background-color: white;
+}
+.shop{
+ display: flex;
+}
+.card-1{
+  margin-top: 10px;
+    margin-left: 10px;
+  width: 64px;
+  background-color:rgb(228, 228, 228);
+  border-radius: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 20%;
+}
+.footer{
+  width: 95%;
+  height: 500px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.PF{
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconF{
+  padding: 0px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  height: 50px;
+}
+.icon1{
+color: white;
+height: 25px;
+}
+.Cf1{padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 92%;
+  height: 230px;
+}
+.ftext{
+  color: aliceblue;
+}
+.line{
+  width: 70%;
+  height: 3px;
+  background-color:white;
+}
+.icon2{
+  color: white;
+  height: 20px;
+  
+}
+.grid{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap:  30px;
+  width: 100%;
+ 
+
+}
+.nav{
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+.hp1{
+  width: 95%;
+  background-color: skyblue;
+  height: 500px;
+  display: flex;
+  border-radius: 15px;
+}
+.btn2{
+  width: 35%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+.whycard{
+  width: 100%;
+  background-color:white;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.hp2{
+  width: 95%;
+  background-color: #6929a5;
+  height: 600px;
+  display: flex;
+  border-radius: 15px;}

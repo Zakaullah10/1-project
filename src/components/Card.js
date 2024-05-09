@@ -3,6 +3,7 @@ import React from 'react'
 function Card(props) {
   return (
     <div >
+    // Hamza
         <div className="b">
         <div className="shop">
           <div className="card">

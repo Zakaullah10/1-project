@@ -6,6 +6,7 @@ export function Login() {
   const [field1, setField1] = useState("");
   const [field2, setField2] = useState("");
   const [error, setError] = useState("");
+  const [fun, setFun] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();

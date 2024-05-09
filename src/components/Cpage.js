@@ -3,8 +3,8 @@ import { map } from './assets';
 
 function Cpage() {
   return (
-    <div style={{ backgroundColor :'lightgrey'}}>
-  // Hamza
+    <div style={{ backgroundColor :'lightgrey'}}>git 
+  
     <div style={{display:'flex', justifyContent:'center'}}>
     <div style={{width:'95%'}}>
       <h1>CONTACT US</h1>

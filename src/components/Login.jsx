@@ -6,13 +6,23 @@ export function Login() {
   const [field1, setField1] = useState("");
   const [field2, setField2] = useState("");
   const [error, setError] = useState("");
+  const [error1, setError1] = useState("");
   const [fun, setFun] = useState("");
 
+
   const handleSubmit = (event) => {
+    localStorage.setItem('email',field1)
+    localStorage.setItem('password',field2)
+    let pattern = /^[A-Za-z._]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,4}$/
     event.preventDefault();
     if (field1 === "" || field2 === "") {
-      setError("Please fill in all fields");
-    } else {
+      setError1("Please fill in all fields");
+    } 
+    else if (!pattern.test(field1)) {
+      setError('Invalid email address');
+    }
+      
+    else {
       const email = [
         {
           Email: field1,
@@ -54,6 +64,7 @@ export function Login() {
             required
           />
           <p style={{ color: "red" }}>{error}</p>
+          <p style={{ color: "red" }}>{error1}</p>
         </div>
 
         {/*footer*/}

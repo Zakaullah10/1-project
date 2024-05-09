@@ -4,6 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
+<<<<<<< HEAD
+=======
+/package.json
+>>>>>>> a7b7934d83ed8966cfe2eedda5ca9358c1ba3dad
 
 # testing
 /coverage

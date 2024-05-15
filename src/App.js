@@ -6,6 +6,7 @@ import Whyus from "./components/Whyus";
 import Testimonial from "./components/Testimonial";
 import {Login} from "./components/Login";
 import Contactus from "./components/Contactus";
+import { Item } from "./components/Item";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,8 @@ function App() {
       <Route path="/testimonial"element={<Testimonial/>}/>
       <Route path="/whyus"element={<Whyus/>}/>
       <Route path="/contact"element={<Contactus/>}/>
+      <Route path="/items/:id"element={<Item/>}/>
+
       
     </Routes>
     </BrowserRouter>

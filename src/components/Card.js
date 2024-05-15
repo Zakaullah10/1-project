@@ -1,24 +1,33 @@
-import React from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card(props) {
+  const navigate = useNavigate();
   return (
-    <div >
-    // Hamza
-        <div className="b">
+    <div>
+      <div className="b">
         <div className="shop">
-          <div className="card">
+          <div className="card" onClick={()=>{navigate(`/items/${props.Id}`)}}>
             <div>
-            <div className="card-1">
-              <h3>New</h3>
-            </div></div>
-            <div style={{height : '66%',display : "flex", justifyContent: 'center'}}>
-            <img
+              <div className="card-1" >
+                <h3>New</h3>
+              </div>
+            </div>
+            <div
               style={{
-                width: "150px",
-                padding: "60px",
+                height: "66%",
+                display: "flex",
+                justifyContent: "center",
               }}
-              src={props.Image}
-            /></div>
+            >
+              <img
+                style={{
+                  width: "150px",
+                  padding: "60px",
+                }}
+                src={props.Images}
+              />
+            </div>
             <div
               style={{
                 display: "flex",
@@ -35,7 +44,7 @@ function Card(props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Card
+export default Card;

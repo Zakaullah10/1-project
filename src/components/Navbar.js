@@ -1,8 +1,9 @@
 import React from 'react'
 import '../App.css'
 import {NavLink  } from 'react-router-dom'
+import { Noty } from './Noty'
 
-function Navbar() {
+function Navbar({count, setCount}) {
   return (
     <div className='a'>
     <h1 className="heading-1"> GIFTOS</h1>
@@ -14,7 +15,9 @@ function Navbar() {
       <div className='nav'> <NavLink className='nav' to='/contact'>CONTACT US</NavLink></div>
       <div className='nav'>  <NavLink className='nav' to='/testimonial'>TESTIMONIAL</NavLink></div>
       </div>
-      <div> <NavLink className='nav'to='/'>LOGIN</NavLink></div>
+      <>  <Noty count={count} setCount={setCount}/></>
+      <div>
+       <NavLink className='nav'to='/'>LOGIN</NavLink></div>
     </div>
     </div>
   )

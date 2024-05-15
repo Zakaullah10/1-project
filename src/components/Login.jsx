@@ -35,8 +35,8 @@ export function Login() {
     }
   };
   return (
-    <div>
-      <div>
+    <div style={{display:'flex',justifyContent:'center' }}>
+      <div style={{width:'25%', backgroundColor:'white', marginTop:'10%'}}>
         <div
           style={{
             display: "flex",
@@ -58,13 +58,13 @@ export function Login() {
           <input
             type="password"
             placeholder="Password"
-            style={{ height: "35px", width: "280px" }}
+            style={{ height: "35px", width: "280px", marginTop:'0' }}
             value={field2}
             onChange={(e) => setField2(e.target.value)}
             required
           />
-          <p style={{ color: "red" }}>{error}</p>
-          <p style={{ color: "red" }}>{error1}</p>
+          <p style={{ color: "red", marginTop:'0' }}>{error}</p>
+          <p style={{ color: "red", marginTop:'0'}}>{error1}</p>
         </div>
 
         {/*footer*/}
@@ -74,7 +74,8 @@ export function Login() {
             justifyContent: "center",
             gap: "25px",
             alignItems: "center",
-            marginTop: "30px",
+            paddingBottom:'20px'
+           
           }}
         >
           <button

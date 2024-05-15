@@ -3,7 +3,7 @@ import { map } from './assets';
 
 function Cpage() {
   return (
-    <div style={{ backgroundColor :'lightgrey'}}>git 
+    <div style={{ backgroundColor :'lightgrey'}}>
   
     <div style={{display:'flex', justifyContent:'center'}}>
     <div style={{width:'95%'}}>

@@ -3,7 +3,7 @@ import '../App.css'
 import {NavLink  } from 'react-router-dom'
 import { Noty } from './Noty'
 
-function Navbar({count, setCount}) {
+function Navbar({count,setCount,showModal,setShowModal }) {
   return (
     <div className='a'>
     <h1 className="heading-1"> GIFTOS</h1>
@@ -15,7 +15,7 @@ function Navbar({count, setCount}) {
       <div className='nav'> <NavLink className='nav' to='/contact'>CONTACT US</NavLink></div>
       <div className='nav'>  <NavLink className='nav' to='/testimonial'>TESTIMONIAL</NavLink></div>
       </div>
-      <>  <Noty count={count} setCount={setCount}/></>
+      <>  <Noty count={count} setCount={setCount} showModal={showModal} setShowModal={setShowModal} /></>
       <div>
        <NavLink className='nav'to='/'>LOGIN</NavLink></div>
     </div>

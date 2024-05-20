@@ -11,9 +11,8 @@ import Whyuscards from "./Whyuscards";
 
 import Tpage from "./Tpage";
 import Cpage from "./Cpage";
-
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+
 
 // Import Swiper styles
 import "swiper/css";
@@ -24,7 +23,7 @@ export const HomePage = () => {
   
   return (
     <div className="home">
-      <Navbar />
+     
       <>
       <Swiper spaceBetween={20}
         centeredSlides={true}
@@ -157,7 +156,7 @@ export const HomePage = () => {
       <div style={{ width: "95%" }}>
         <Datashop />
       </div>
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center",  marginTop:'60px'}}>
         <div className="hp1">
           <div
             style={{

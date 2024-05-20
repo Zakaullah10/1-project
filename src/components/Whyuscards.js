@@ -23,9 +23,9 @@ function Whyuscards() {
         justifyContent: "center",
         alignItems: "center",
         marginBottom:" 40px",
-        marginTop:" 40px"
+       
       }}>
-            <h1>WHY SHOP WITH US</h1>
+            <h1 style={{ marginTop:" 40px"}}>WHY SHOP WITH US</h1>
         </div>
         <div style={{ display: "flex",justifyContent: "center",}}>
         <div style={{width:'95%'}}>

@@ -1,36 +1,75 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { Latestproduct } from "../constants";
 import Footer from "./Footer";
-
 import { TiTick } from "react-icons/ti";
-export const Item = () => {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(""); // State to store selected image URL
+import { RxCross2 } from "react-icons/rx";
+import Card from "./Card";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useNavigate } from "react-router-dom";
+
+export const Item = ({
+  count,
+  data,
+  setData,
+  setNum,
+  counts,
+  setCounts,
+  found,
+  setCartCount,
+  
+}) => {
+  const navigate = useNavigate();
+  const [selectedImage, setSelectedImage] = useState("");
   const currentUrl = window.location.href;
-  console.log(currentUrl);
   const currentId = currentUrl.split("items")[1].split("")[1];
-  console.log(currentId);
   const filterData = Latestproduct.filter((item) => item.id == currentId);
-  console.log(filterData);
-  const [count, setCount] = useState(0);
-  const [counts, setCounts] = useState(1);
 
   const handleImageClick = (imageUrl) => {
-    // Function to handle image click and update selected image state
     setSelectedImage(imageUrl);
-    console.log(imageUrl);
   };
-  
- const hello = ()=>{
-  if(counts !==1){
-    setCounts(counts -1)
-  }
- }
+
+  const hello = () => {
+    if (counts !== 1) {
+      setCounts(counts - 1);
+    }
+  };
+
+
+  const hello1 = () => {
+    
+    // Check if an item with the same ID already exists in the cart
+    const existingItem = data.find((item) => item.id === filterData[0].id);
+    const sum = data
+
+    console.log("Existing Item:", existingItem);
+
+    // If the item already exists, do not add it again
+    if (existingItem) {
+      // You can show a message or handle it in any way you prefer
+      console.log("Item already exists in the cart!");
+      return;
+    }
+    console.log(data);
+    // If the item does not exist, add it to the cart
+    const newItem = {
+      image: filterData[0].design[0],
+      items: counts,
+      price: filterData[0].Price,
+      id: filterData[0].id,
+      name :filterData[0].name
+       // Make sure to include the ID
+      
+    };
+     setCartCount(counts);
+    setData([...data, newItem]);
+    setNum(count + 1);
+    setCounts(1);
+  };
+  console.log(data)
+
   return (
     <div>
-      <Navbar count={count} setCount={setCount}/>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
           style={{
@@ -56,8 +95,12 @@ export const Item = () => {
               <img
                 key={index}
                 src={item}
-                onClick={() => handleImageClick(item)} // Pass the image URL to the click handler
-                style={{ cursor: "pointer", marginBottom: "10px", width:'100px' }}
+                onClick={() => handleImageClick(item)}
+                style={{
+                  cursor: "pointer",
+                  marginBottom: "10px",
+                  width: "100px",
+                }}
               />
             ))}
           </div>
@@ -75,7 +118,6 @@ export const Item = () => {
               style={{ width: "350px", height: "400px" }}
             />
           </div>
-
           <div
             style={{
               width: "55%",
@@ -85,9 +127,7 @@ export const Item = () => {
             <div
               style={{
                 display: "flex",
-
                 flexDirection: "column",
-
                 marginTop: "40px",
               }}
             >
@@ -119,24 +159,26 @@ export const Item = () => {
               </h1>
               <h3>
                 Discover the beauty of ceramics with our handcrafted. This
-                exquisite <br/>piece combines artistry and function, making it a
-                versatile addition to any<br/> space. Whether used as a decorative
-                accent or a practical item, this ceramic<br/> creation adds a touch
-                of elegance to your surroundings.
+                exquisite <br />
+                piece combines artistry and function, making it a versatile
+                addition to any
+                <br /> space. Whether used as a decorative accent or a practical
+                item, this ceramic
+                <br /> creation adds a touch of elegance to your surroundings.
               </h3>
               <div
                 style={{
                   display: "flex",
-                  gap : '20px'
-                 
+                  gap: "20px",
                 }}
               >
-                <div style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap : '1px'
-                 
-                }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1px",
+                  }}
+                >
                   <button
                     style={{ height: "26px", width: "30px" }}
                     onClick={hello}
@@ -147,7 +189,7 @@ export const Item = () => {
                     type="text"
                     value={counts}
                     onChange={(e) => {
-                      setCount(e.target.value);
+                      setCounts(e.target.value);
                     }}
                     style={{
                       width: "100px",
@@ -162,68 +204,50 @@ export const Item = () => {
                     +
                   </button>
                 </div>
-                <button style={{ width: "120px", height: "40px",}} onClick={() => setCount(count + 1)}>
+                <button
+                  style={{ width: "120px", height: "40px" }}
+                  onClick={hello1}
+                >
                   Add Cart
                 </button>
               </div>
               <h2>Free shipping on orders over $50!</h2>
-              <div style={{margin:'0px'}}> <p><TiTick /> No-Risk Money Back Guarantee!</p>
-              <p><TiTick />  No Hassle Refunds</p>
-              <p> <TiTick /> Secure Payments</p></div>
-             
+              <div style={{ margin: "0px" }}>
+                {" "}
+                <p>
+                  <TiTick /> No-Risk Money Back Guarantee!
+                </p>
+                <p>
+                  <TiTick /> No Hassle Refunds
+                </p>
+                <p>
+                  {" "}
+                  <TiTick /> Secure Payments
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      {showModal && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <label
-            style={{
-              display: "flex",
-              marginRight: "85px",
-              gap: "25px",
-              marginBottom: "20px",
-              marginTop: "20px",
-            }}
-          >
-            <h2>Payment Method </h2>{" "}
-            <input type="text" style={{ width: "300px" }}></input>
-          </label>
-          <label
-            style={{
-              display: "flex",
-              marginRight: "65px",
-              gap: "25px",
-              marginBottom: "20px",
-            }}
-          >
-            <h2>Phone Number </h2>{" "}
-            <input type="text" style={{ width: "300px" }}></input>
-          </label>
-          <label style={{ display: "flex", gap: "25px", marginBottom: "20px" }}>
-            <h2>Address </h2>{" "}
-            <input type="text" style={{ width: "300px" }}></input>
-          </label>
-          <label
-            style={{
-              display: "flex",
-              marginLeft: "25px",
-              gap: "25px",
-              marginBottom: "20px",
-            }}
-          >
-            <h2>Email </h2>{" "}
-            <input type="text" style={{ width: "300px" }}></input>
-          </label>
-        </div>
-      )}
+      <div style={{ marginLeft: "35px", fontSize: "20px" }}>
+        {" "}
+        <h1>Related products</h1>
+      </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Swiper style={{ width: "95%" }} spaceBetween={20} slidesPerView={4}>
+          {Latestproduct.map((data, index) => (
+            <SwiperSlide key={index}>
+              <Card
+                Images={data.Images}
+                name={data.name}
+                Price={data.Price}
+                Id={data.id}
+                design={data.design}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       <Footer />
     </div>
   );

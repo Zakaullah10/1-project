@@ -6,7 +6,7 @@ import Footer from "./Footer";
 function Contactus() {
   return (
     <div style={{ backgroundColor: "lightgrey" }}>
-      <Navbar />
+     
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div style={{ width: "95%" }}>
           <h1>CONTACT US</h1>

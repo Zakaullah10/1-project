@@ -23,7 +23,7 @@ function Card(props) {
               <img
                 style={{
                   width: "150px",
-                  padding: "60px",
+                  padding: "25px",
                 }}
                 src={props.Images}
               />

@@ -36,18 +36,7 @@ function Datashop() {
       >
         <div className="grid" >{datacomp}</div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "160px",
-          alignItems: " center",
-        }}
-      >
-        <div style={{ width: "15%" }}>
-          <button className="btn1">View All Product</button>
-        </div>
-      </div>
+    
     </div>
   );
 }

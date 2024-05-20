@@ -4,7 +4,7 @@ import { Item } from "./Item";
 
 const notyIconStyle = {
   position: "relative",
-  display: "inline"
+  display: "inline",
 };
 const notyNumStyle = {
   position: "absolute",
@@ -14,21 +14,21 @@ const notyNumStyle = {
   color: "white",
   display: "inline",
   padding: "0px 5px",
-  borderRadius: "20px"
+  borderRadius: "20px",
 };
 
-export function Noty({count,}) {
-   
-  
-    
+export function Noty({ count, setShowModal, showModal }) {
+  const handel = () => {
+    setShowModal(!showModal);
+  };
   return (
     <div>
-      <div style={notyIconStyle}>
-        { <div style={notyNumStyle}>{count}</div>}
-        <FaShoppingCart style={{width:' 70px',color:'white',
-    height: '25px'}} />
+      <div style={notyIconStyle} onClick={handel}>
+        {<div style={notyNumStyle}>{count}</div>}
+        <FaShoppingCart
+          style={{ width: " 70px", color: "white", height: "25px" }}
+        />
       </div>
-      
     </div>
   );
 }

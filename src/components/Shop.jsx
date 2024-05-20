@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 import Card from "./Card";
 import { Latestproduct } from "../constants";
@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useNavigate } from "react-router-dom";
 function Shop() {
+ 
+  
 
   const datacomp = Latestproduct.map((data) => {
     return (
@@ -19,20 +21,19 @@ function Shop() {
       />
     );
   });
-
   return (
     <div style={{ backgroundColor: "lightgray" }}>
-      <Navbar />
+      
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           marginBottom: " 40px",
-          marginTop: " 40px",
+        
         }}
       >
-        <h1> LATEST PRODUCTS </h1>
+        <h1 style={{ marginTop: " 40px",}}> LATEST PRODUCTS </h1>
       </div>
       <div
         style={{
@@ -51,18 +52,8 @@ function Shop() {
           <div className="grid">{datacomp }</div>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          height: "160px",
-          alignItems: " center",
-        }}
-      >
-        <div style={{ width: "15%" }}>
-          <button className="btn1">View All Product</button>
-        </div>
-      </div>
+    
+      
       <Footer />
     </div>
   );

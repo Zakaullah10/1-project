@@ -9,18 +9,18 @@ import { Bear } from "./assets";
 function Testimonial() {
   return (
     <div style={{ backgroundColor: "lightgray" }}>
-      <Navbar />
+    
       <div
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           marginBottom: " 40px",
-          marginTop: " 40px",
+          
           position: "relative",
         }}
       >
-        <h1> TESTIMONIAL </h1>
+        <h1 style={{marginTop: " 40px",}}> TESTIMONIAL </h1>
       </div>
       <div style={{ display: "flex ", justifyContent: "center" }}>
         <div

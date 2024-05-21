@@ -121,11 +121,12 @@ function App() {
                   alignItems: "center",
                   marginTop: "10px",
                   backgroundColor: "white",
+                  height: "80px"
                 }}
               >
                 <img
                   src={item.image}
-                  style={{ width: "80px", height: "80px" }}
+                  style={{ width: "75px", height: "70px" }}
                 />
                 <div style={{ gap: "1px" }}>
                   <button

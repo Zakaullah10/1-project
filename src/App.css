@@ -267,7 +267,9 @@ body {
 .card:hover {
   cursor: pointer;
   transform: scale(1.1);
+
 }
+
 .place:hover {
   cursor: pointer;
   background-color: black !important;

@@ -43,8 +43,9 @@ export const CheckOut = ({ data, setShowModal, showModal }) => {
     console.log(data);
   }, [data]);
   const handleSubmit = (e) => {
-    if(!formdata){
-      console.log('error')
+    if(formdata.Email==''||formdata.Address==''||formdata.FirstName==''||formdata.LastName==''||formdata.city||formdata.phoneNumber||formdata.postalcode){
+      setError3('fill the all inputs fileds')
+      setTimeout(() => setError3(""), 3000);
       setOrder(false)
     }
     else if(formdata){
@@ -54,7 +55,8 @@ export const CheckOut = ({ data, setShowModal, showModal }) => {
     
   
     if (!pattern.test(formdata.Email)) {
-      setError2("invalid email filled");
+      setError2("invalid emailfiled");
+      setTimeout(() => setError2(""), 3000);
     }
 
     e.preventDefault();
@@ -80,6 +82,7 @@ export const CheckOut = ({ data, setShowModal, showModal }) => {
             alignItems: "center",
           }}
         >
+          <>{error3}</>
           <h1 style={{ marginTop: "40px" }}>Customer information</h1>
           <input
             style={{
